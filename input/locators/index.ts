@@ -1,0 +1,1 @@
+export { loginLocators } from "./loginLocator";
