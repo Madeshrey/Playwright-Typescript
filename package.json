@@ -4,6 +4,7 @@
   "main": "index.js",
   "scripts": {
     "test": "npx playwright test",
+    "test:docker": "docker build -t playwright-tests . && docker run --rm playwright-tests",
     "test:headed": "playwright test --headed",
     "test:report": "playwright show-report",
     "lint": "eslint . --ext .ts",

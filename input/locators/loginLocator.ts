@@ -3,5 +3,7 @@ export const loginLocators={
     password:'Password',
     login:'Login',
     forgotPassword:'Forgot your password?',
-    required:'.oxd-form-row'
+    required:'.oxd-form-row',
+    profileIcon:'i[class="oxd-icon bi-caret-down-fill oxd-userdropdown-icon"]',
+    logout:'Logout',
 }
