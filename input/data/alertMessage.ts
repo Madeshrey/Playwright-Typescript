@@ -1,4 +1,5 @@
 export const alerts={
     invalidCredentials:'Invalid credentials',
-    required:'Required'
+    required:'Required',
+    successfullySaved:'Successfully Saved'
 }
