@@ -12,8 +12,8 @@ export default defineConfig({
   workers: process.env.CI ? 4 : undefined,
   reporter: [["html", { open: "never" }]],
   use: {
-    video: "on",
-    screenshot: "on",
+    video: "retain-on-failure",
+    screenshot: "only-on-failure",
     trace:"on-first-retry",
   },
 
@@ -23,10 +23,12 @@ export default defineConfig({
       use: {
         ...devices["Desktop Chrome"],
         channel: "chrome",
-        viewport: null,
         headless: true,
+        viewport: process.env.CI ? { width: 1280, height: 720 } : null,
         launchOptions: {
-          args: ["--start-maximized"],
+          args: process.env.CI
+            ? ['--window-size=1280,720']
+            : ['--start-maximized'],
         },
         deviceScaleFactor: undefined,
       },
